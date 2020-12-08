@@ -1,10 +1,10 @@
 #include<stdio.h>
 int main()
 {
-	int a = 5;
-	void * p1 = &a;
+    int a = 5;
+    void * p1 = &a;
     int * p2 = (int *)p1;
-    //最好不要使用下面这一句 
+    //鏈�濂戒笉瑕佷娇鐢ㄤ笅闈㈣繖涓�鍙ワ紝C++缂栬瘧鍣ㄤ細鎶ラ敊
     //int * p2 = p1;
     printf("%d\n", *p2);
 }
