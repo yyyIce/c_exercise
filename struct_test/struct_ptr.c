@@ -10,7 +10,7 @@ typedef struct student_t
 int main()
 {
 	/*
-	//¸³Öµ¸øÒÑÓÐ½á¹¹Ìå 
+	//èµ‹å€¼ç»™å·²æœ‰ç»“æž„ä½“
 	student b = {"Lee", 1, 19};
 	student * a;
 	a = &b;
