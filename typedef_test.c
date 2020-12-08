@@ -1,5 +1,5 @@
 #include<stdio.h>
-typedef char (* ICE_PTR_ARR)[10]; //Ïàµ±ÓÚchar (* p)[10]; 
+typedef char (* ICE_PTR_ARR)[10]; //ç›¸å½“äºŽchar (* p)[10]; 
 int main()
 {
 	char str [4][10] = {"test1","yeah","good","great"};
