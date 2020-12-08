@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-//u_charÊÇ8Î» 
+//u_charæ˜¯8ä½ 
 typedef struct _ethernet_h
 {
 }ethernet_h;
@@ -27,46 +27,45 @@ typedef struct _icmp_h
 }icmp_h;
 
 
-//Êý¾Ý°üµÄ·ÖÎö½á¹¹
+//æ•°æ®åŒ…çš„åˆ†æžç»“æž„
 typedef struct _p_data_analysis
 {
-    char p_type[8];                   //°üÀàÐÍ
-    int time[6];                      //Ê±¼ä´Á
-    int len;                          //³¤¶È
+	char p_type[8];                   //åŒ…ç±»åž‹
+	int time[6];                      //æ—¶é—´æˆ³
+	int len;                          //é•¿åº¦
 
-    struct _ethernet_h *eth_hdr;      //ÒÔÌ«ÍøÖ¡Í·
-    struct _arp_h *arp_hdr;           //arp°üÍ·
-    struct _ip_h *ip_hdr;             //ip°üÍ·
-    struct _icmp_h *icmp_hdr;         //icmp°üÍ·
-    struct _udp_h *udp_hdr;           //udp°üÍ·
-    struct _tcp_h *tcp_hdr;           //tcp°üÍ·
+	struct _ethernet_h *eth_hdr;      //ä»¥å¤ªç½‘å¸§å¤´
+	struct _arp_h *arp_hdr;           //arpåŒ…å¤´
+	struct _ip_h *ip_hdr;             //ipåŒ…å¤´
+	struct _icmp_h *icmp_hdr;         //icmpåŒ…å¤´
+	struct _udp_h *udp_hdr;           //udpåŒ…å¤´
+	struct _tcp_h *tcp_hdr;           //tcpåŒ…å¤´
 
 }p_data_analysis;
 
 int main()
 {
-    printf("p_data_analysis£º %d\n",sizeof(p_data_analysis));
+	printf("p_data_analysisï¼š %d\n",sizeof(p_data_analysis));
 
-	
 	p_data_analysis * data = (p_data_analysis *)malloc(sizeof(p_data_analysis));
-	//»ò
+	//æˆ–
 	//struct _p_data_analysis * data = (struct _p_data_analysis *)malloc(sizeof(struct _p_data_analysis));
 	printf("data->eth_hdr addr: %p\n",data->eth_hdr);
 
 	memset(data, 0, sizeof(p_data_analysis));
-	//»ò
+	//æˆ–
 	//memset(data, 0, sizeof(struct _p_data_analysis));
 	data->len = 1460;	
 	printf("data addr: %p\n",data);
-    printf("data->len: %d\n",data->len);
-    printf("data->eth_hdr: %d\n",data->eth_hdr);
-    printf("data->eth_hdr addr£º %p\n",data->eth_hdr);
-    data->eth_hdr = (struct _ethernet_h *)malloc(sizeof(struct _ethernet_h));
-    printf("data->eth_hdr addr: %p\n",data->eth_hdr);
+	printf("data->len: %d\n",data->len);
+	printf("data->eth_hdr: %d\n",data->eth_hdr);
+	printf("data->eth_hdr addrï¼š %p\n",data->eth_hdr);
+	data->eth_hdr = (struct _ethernet_h *)malloc(sizeof(struct _ethernet_h));
+	printf("data->eth_hdr addr: %p\n",data->eth_hdr);
     
     
-    /*
-	//ÊÔÊÔ²»ÉêÇëÄÚ´æ¿Õ¼ä»á·¢ÉúÊ²Ã´£¿ 
+	/*
+	//è¯•è¯•ä¸ç”³è¯·å†…å­˜ç©ºé—´ä¼šå‘ç”Ÿä»€ä¹ˆï¼Ÿ 
 	p_data_analysis * data;
 	//memset(data, 0, sizeof(p_data_analysis));
 	data->len = 1460;
