@@ -1,9 +1,9 @@
 #include<stdio.h>
 typedef struct student_t
 {
-   char name[128];
-   int  sex;
-   int  age;
+	char name[128];
+	int  sex;
+	int  age;
 }student;
 
 int main()
