@@ -5,7 +5,7 @@ void haaa(int a, char c)
 }
 int main()
 {
-	void (*fun_pointer)(int,char) = NULL;
+    void (*fun_pointer)(int,char) = NULL;
     fun_pointer = haaa;
     fun_pointer(1,'a');
     printf("&haaa:%p, haaa:%p\n", &haaa, haaa); 
