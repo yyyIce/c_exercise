@@ -1,22 +1,22 @@
 #include <stdio.h>
 struct student_t2
 {
-   char * name;
-   int  sex;
-   int  age;
+	char * name;
+	int  sex;
+	int  age;
 };
 struct student_t1
 {
-   char name[128];
-   int  sex;
-   int  age;
+	char name[128];
+	int  sex;
+	int  age;
 };
 int main()
 {
 	struct student_t1 s1 = { "Sarah", 0, 18};
 	printf("%s, %d, %d\n", s1.name, s1.sex, s1.age);
 
-/*´íÎóÊ¾Àı 
+/*é”™è¯¯ç¤ºä¾‹ 
 	struct student_t1 s2;
 	s2.name = "Sam";
 	s2.sex = 1;
@@ -31,30 +31,30 @@ int main()
 	
 	struct student_t2 s4;
 	char a[10] = "Sally";
-	s4.name = a;               //aÊÇÊı×éÊ×µØÖ· 
+	s4.name = a;               //aæ˜¯æ•°ç»„é¦–åœ°å€ 
 	s4.sex = 1;
 	s4.age = 19;
-	printf("%p\n", a);          //%p¿ÉÒÔÊä³ö±äÁ¿´æ´¢µÄµØÖ·£¬000000000062FD50 
-	printf("%s\n", a);          //%sÑ°Ö·£¬Êä³öµØÖ·ÄÚ´æ´¢µÄÄÚÈİ£¬Sally 
+	printf("%p\n", a);          //%på¯ä»¥è¾“å‡ºå˜é‡å­˜å‚¨çš„åœ°å€ï¼Œ000000000062FD50 
+	printf("%s\n", a);          //%så¯»å€ï¼Œè¾“å‡ºåœ°å€å†…å­˜å‚¨çš„å†…å®¹ï¼ŒSally 
 	
-/*	Ö±½Ó¸³ÖµµÄµØÖ· 
+/*	ç›´æ¥èµ‹å€¼çš„åœ°å€ 
 	struct student_t2 s4;
 	s4.name = "Sally";
 	s4.sex = 1;
 	s4.age = 19;*/ 
 	
-	printf("%p\n", s4.name);    //Êä³ös4.name´æ´¢(Ö¸Ïò)µÄµØÖ·£¬000000000062FD50£¬¿ÉÒÔ·¢ÏÖÓëaµÄµØÖ·ÏàÍ¬ 
-	printf("%p\n", &s4.name);   //Êä³ös4.name±¾ÉíµÄµØÖ·£¬000000000062FD60 
-	printf("%c\n", *s4.name);   //×¢ÒâÊ¹ÓÃ%c£¬'*'ÎªÈ¡µØÖ·ÖĞ´æ´¢µÄÊıÖµ£¬s4.nameÖĞ´æ´¢µÄÄÚÈİÊÇµÚÒ»¸ö×ÖÄ¸'S' 
-	printf("%s\n", s4.name);    //%s£¬Êä³ös4.nameÕâÒ»´®µØÖ·´æ´¢µÄÄÚÈİ£¬Sally 
-	printf("%p\n", &*s4.name);  //Êä³ös4.name´æ´¢ÄÚÈİ'S'µÄµØÖ·£¬ 000000000062FD50
+	printf("%p\n", s4.name);    //è¾“å‡ºs4.nameå­˜å‚¨(æŒ‡å‘)çš„åœ°å€ï¼Œ000000000062FD50ï¼Œå¯ä»¥å‘ç°ä¸açš„åœ°å€ç›¸åŒ 
+	printf("%p\n", &s4.name);   //è¾“å‡ºs4.nameæœ¬èº«çš„åœ°å€ï¼Œ000000000062FD60 
+	printf("%c\n", *s4.name);   //æ³¨æ„ä½¿ç”¨%cï¼Œ'*'ä¸ºå–åœ°å€ä¸­å­˜å‚¨çš„æ•°å€¼ï¼Œs4.nameä¸­å­˜å‚¨çš„å†…å®¹æ˜¯ç¬¬ä¸€ä¸ªå­—æ¯'S' 
+	printf("%s\n", s4.name);    //%sï¼Œè¾“å‡ºs4.nameè¿™ä¸€ä¸²åœ°å€å­˜å‚¨çš„å†…å®¹ï¼ŒSally 
+	printf("%p\n", &*s4.name);  //è¾“å‡ºs4.nameå­˜å‚¨å†…å®¹'S'çš„åœ°å€ï¼Œ 000000000062FD50
 	
 	struct student_t2 s5 = {
         .name = "Tom",
         .sex = 1,
         .age = 10
     };
-    printf("%s, %d, %d\n", s5.name, s5.sex, s5.age);
+	printf("%s, %d, %d\n", s5.name, s5.sex, s5.age);
 	return 0;
 }
 
